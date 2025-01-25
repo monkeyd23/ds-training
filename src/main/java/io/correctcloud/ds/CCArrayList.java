@@ -1,24 +1,24 @@
 package io.correctcloud.ds;
 
-public class CCArrayList {
+public class CCArrayList<T> {
 
-    private Integer[] elements;
+    private T[] elements;
     public int size = 0;
 
     public CCArrayList() {
-        elements = new Integer[10];
+        elements = (T[]) new Object[10];
     }
 
-    public void add(Integer element) {
+    public void add(T element) {
         if (size == elements.length) {
-            Integer[] newElements = new Integer[size * 2];
+            T[] newElements =(T[]) new Object[size * 2];
             System.arraycopy(elements, 0, newElements, 0, elements.length);
             elements = newElements;
         }
         elements[size++] = element;
     }
 
-    public Integer get(int index) {
+    public T get(int index) {
         return elements[index];
     }
 
